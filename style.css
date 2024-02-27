@@ -27,3 +27,34 @@ body {
 .search-container {
   margin-top: 40px;
 }
+
+.boxLoading {
+  /* Define your loading animation styles here */
+  /* For example, use a spinning loader or a progress bar */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  margin: 0 auto;
+
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
