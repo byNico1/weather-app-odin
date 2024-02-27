@@ -6,7 +6,7 @@ const weatherDataContainer = document.querySelector(".weather-data");
 
 async function fetchAPI(city) {
   const fetchData = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=0f315cc4501b4f96b23163917242002&q=${
+    `https://api.weatherapi.com/v1/current.json?key=0f315cc4501b4f96b23163917242002&q=${
       city || "london"
     }`
   );
