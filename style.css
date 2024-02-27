@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.weather-card {
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: #1d1946c7;
+}
+
+.weather-info {
+  color: #ffffff;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.search-container {
+  margin-top: 40px;
+}
