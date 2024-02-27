@@ -2,6 +2,7 @@ const imgIcon = document.querySelector("#weather-icon");
 const weatherInfoContainer = document.querySelector(".weather-info");
 const cityInput = document.querySelector('input[name="city"]');
 const searchButton = document.querySelector("#search");
+const weatherDataContainer = document.querySelector(".weather-data");
 
 async function fetchAPI(city) {
   const fetchData = await fetch(
@@ -13,7 +14,15 @@ async function fetchAPI(city) {
 }
 
 async function defaultAPICall() {
+  weatherDataContainer.classList.add("hidden");
+
+  const loader = '<div class="boxLoading"></div>';
+  document.getElementById("loading").innerHTML = loader;
+
   const cityData = await fetchAPI();
+
+  document.getElementById("loading").innerHTML = "";
+  weatherDataContainer.classList.remove("hidden");
 
   imgIcon.src = cityData.current.condition.icon;
 
@@ -27,8 +36,16 @@ async function defaultAPICall() {
 defaultAPICall();
 
 searchButton.addEventListener("click", async () => {
+  weatherDataContainer.classList.add("hidden");
+
+  const loader = '<div class="boxLoading"></div>';
+  document.getElementById("loading").innerHTML = loader;
+
   const city = cityInput.value;
   const cityData = await fetchAPI(city);
+
+  document.getElementById("loading").innerHTML = "";
+  weatherDataContainer.classList.remove("hidden");
 
   imgIcon.src = cityData.current.condition.icon;
 
